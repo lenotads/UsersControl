@@ -1,0 +1,28 @@
+//Método que deleta um cliente cadastrado  
+public void delEntry(){  
+    BufferedReader keyIn = new BufferedReader(new InputStreamReader (System.in));  
+    int index = 0;  
+    //Verifica se o cadastro está vazio  
+    if (top == 0){  
+    System.out.println (" O cadastro está vazio ");  
+    return;  
+    }  
+    //Solicita o registro a ser deletado  
+    try {  
+        //Exibe os registros do cadastro  
+        viewEntries();  
+        System.out.println ("\n Solicte o registro a ser deletado : ");  
+        index = Integer.parseInt(keyIn.readLine())-1;  
+    }catch (Exception e){  
+    }  
+    //Verifica se o índice está dentro do limite  
+    if (index < 0 || index >= top){  
+        System.out.println (" Índice fora dos limites ");  
+        return;  
+    } else {  
+        for (int i = index; i < top; i++)  
+            list <i> = list [i+1];  
+        list [top] = null;  
+        top--;  
+    }  
+}
